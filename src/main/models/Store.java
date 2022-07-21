@@ -36,6 +36,9 @@ public class Store {
     }
 
     public void sellMovie(String name){
+        if (!(this.movies.get(getMovieIndex(name)).isAvailable())){
+            throw new IllegalStateException("Movie not in stock");
+        }
        this.movies.removeIf((movie) ->  movie.getName().equals(name));
     }
     
