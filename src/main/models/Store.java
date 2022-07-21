@@ -35,9 +35,7 @@ public class Store {
     }
 
     public void sellMovie(String name){
-       this.movies.removeIf((movie) -> {
-            return movie.getName().equals(name);
-       });
+       this.movies.removeIf((movie) ->  movie.getName().equals(name));
     }
 
 }
