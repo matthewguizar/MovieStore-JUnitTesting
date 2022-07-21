@@ -37,5 +37,19 @@ public class Store {
     public void sellMovie(String name){
        this.movies.removeIf((movie) ->  movie.getName().equals(name));
     }
+    
+    public int getMovieIndex(String name){
+        for (int i = 0; i < movies.size(); i++) {
+            if (this.movies.get(i).getName().equals(name)){
+                return i;
+            }
+        }
+        return -1000;
+    }
+
+    public void rentMovie(String name){
+        this.movies.get(getMovieIndex(name)).setAvailable(false);
+    }
+
 
 }

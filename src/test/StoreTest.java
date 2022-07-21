@@ -30,4 +30,10 @@ public class StoreTest {
         assertFalse(store.contains(new Movie("The Shawshank Redemption", "Blue-Ray", 9.2)));
     }
 
+    @Test
+    public void rentMovieTest(){
+        store.rentMovie("The Godfather");
+        assertFalse(store.getMovie(1).isAvailable());
+    }
+
 }
